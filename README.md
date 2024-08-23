@@ -1,2 +1,2 @@
 # 1942
-El juego 1942 trata de un avión que se enfrenta a múltiples naves lanzando proyectiles y evitando ser golpeado.
+El juego 1942 trata de un avión que se enfrenta a múltiples naves lanzando proyectiles y evitando ser golpeado. El jugador controla al avión el cual se mueve libremente en un entorno 2D, allí aparecerán enemigos los cuales se mueven según un patrón prestablecido. Existen varios tipos de enemigos los cuales varían de vida (cantidad de disparos necesarios para derribarlos), movimiento(velocidad y patrón), tamaño y su capacidad de disparar proyectiles. El jugador pierde al colisionar o recibir un disparo de algún enemigo, dando fina la partida.
