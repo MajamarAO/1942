@@ -1,0 +1,25 @@
+Estructura del proyecto:
+
+SO = Aquí estarán todos los archivos principales a la hora de ejecutar el programa,
+siendo estos el sistema operativo, el archivo a ejecutar, el simulador y los archivos 
+que sean creados por el simulador a la hora de ejecutar el programa.
+
+Scripts = Aquí estarán todos los archivos que tengan código que sea implementado en el programa
+
+Sprites = Aquí estarán todos los sprites o dibujos que son cargados a lo largo de la ejecución 
+
+
+Mecánicas a realizar:
+ Renderizado y sprites 
+ Sistema de puntuación 
+ Movimiento
+ Disparo
+ Enemigos
+ Hitboxes
+
+Cosas a investigar:
+ Dónde hacer pixel art y como transladarlo 
+ Movimiento continuo o por pulsaciones
+ Como implementar sistema de disparos
+ Manejo de memoria
+
