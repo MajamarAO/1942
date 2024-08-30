@@ -3,6 +3,11 @@ Estructura del proyecto:
 SO = Aquí estarán todos los archivos principales a la hora de ejecutar el programa,
 siendo estos el sistema operativo, el archivo a ejecutar, el simulador y los archivos 
 que sean creados por el simulador a la hora de ejecutar el programa.
+ -exec: Este es una linea que une todos los archivos del programa en uno solo 
+ el cual será usado para ejecutar el juego
+ -main: Este sera el main del programa, es decir el archivo que inicia la ejecución y donde se 
+ probará el funcionamiento del juego
+  
 
 Scripts = Aquí estarán todos los archivos que tengan código que sea implementado en el programa
 

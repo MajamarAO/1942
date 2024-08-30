@@ -1,0 +1,20 @@
+En este archivo habrá una breve guia de como ejecutar los programas y de 
+que comandos usar.
+
+
+----TERMINAL----
+Ensamblar el arhcivo:
+-. exec
+Ejecutar simulador: 
+-java -jar LC3sim.jar
+
+
+----SIMULADOR----
+Para compilar programa: as 1942.asm
+Cargar OS: load lc3os.obj
+Cargar programa: load 1942.obj
+Para ejecutar apretar continue.
+
+
+Manual:
+https://acg.cis.upenn.edu/milom/cse240-Fall05/handouts/lc3manual.html
