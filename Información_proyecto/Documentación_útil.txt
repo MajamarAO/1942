@@ -1,5 +1,6 @@
 Aquí se encontrarán varias fuentes en las cuales se podrá buscar información para trabajar con el proyecto.
 
+Drive del curso = https://drive.google.com/drive/folders/1bAk1XzYPnI67DDDomDVGQOpAV8jnjmeU
 Tabla de comandos LC3 = https://www.cs.colostate.edu/~cs270/.Fall20/resources/LC3Instructions.png
 Manual de comandos LC3 = https://www.cs.colostate.edu/~cs270/.Fall20/resources/PattPatelAppA.pdf
 Guia simulador de LC3 = https://acg.cis.upenn.edu/milom/cse240-Fall05/handouts/lc3guide.html
