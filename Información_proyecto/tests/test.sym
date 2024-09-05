@@ -1,0 +1,11 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	COLOR             3012
+//	COLUMNA           3015
+//	LOOP              3005
+//	ALTO              3014
+//	ANCHO             3013
+//	TESTZONE          3011
+

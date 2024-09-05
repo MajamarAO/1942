@@ -4,9 +4,9 @@ que comandos usar.
 
 ----TERMINAL----
 Ensamblar el arhcivo:
--. exec
+-'. exec'
 Ejecutar simulador: 
--java -jar LC3sim.jar
+-'java -jar LC3sim.jar'
 
 
 ----SIMULADOR----
