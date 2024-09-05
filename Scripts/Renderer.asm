@@ -15,59 +15,29 @@
 ;2- ancho
 ;3- alto
 ;4- El resto del dibujo en .FILL
-;La direccion al sprite en si se pasaria en R0 y se cargaria R1 pos_inicial, R2 Ancho ,R3 Alto, R4 pos_actual 
-;esto puede ser modificado 
+;R0 = Direccion de memoria del sprite estatica
+;R1 = Dirección de escritura 
+;R2 = Ancho
+;R3 = Alto
+;R4 = Pixel a escribir
+;R5 = Dirección de pixel por escribir
+;
 
-EXAMPLE_RND
-LD R0, EXAMPLE
-LDR R0, R1, #0
-LDR R0, R2, #1
-LDR R0, R3, #2
-LDR R0, R4. #3
-LD R6, ROW
  
 RENDER
 STR R4,R1, #0
-ADD R4,R4, #1
+ADD R5,R5, #1
+LDR R4,R5, #0
 ADD R1,R1, #1
 ADD R2,R2, #-1
-BRp LOOP
-LDR R0, R2, #1
-NOT R5, R2
-ADD R5, R5, #1
-ADD R1, R1, R5
-ADD R0, R0, R6
+BRp RENDER
+LDR R2, R0, #1 
+NOT R6, R2
+ADD R6, R6, #1
+ADD R1, R1, R6
+ADD R1, R1, R7
 ADD R3,R3, #-1 
-BRp LOOP
+BRp RENDER
 HALT
-
-EXAMPLE .FILL xDD42
-        .FILL 5
-        .FILL 4
-      
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        .FILL x001F
-        
 
 ROW     .FILL x0080
