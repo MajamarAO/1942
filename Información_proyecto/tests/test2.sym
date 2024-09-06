@@ -2,11 +2,9 @@
 // Scope level 0:
 //	Symbol Name       Page Address
 //	----------------  ------------
-//	ALTO_EX           3015
-//	ANCHO_EX          3014
-//	RENDER            3006
+//	RENDER            3008
 //	EXAMPLE_RND       3000
-//	SPRITE_EX         3016
-//	ROW               302A
-//	EXAMPLE           3013
+//	ROW               302E
+//	EXAMPLE           3017
+//	CHECK_INVIS       300C
 

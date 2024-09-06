@@ -1,0 +1,4 @@
+reset
+as test2.asm
+load lc3os.obj
+load test2.obj
