@@ -2,9 +2,9 @@
 // Scope level 0:
 //	Symbol Name       Page Address
 //	----------------  ------------
+//	PLANE             3018
 //	RENDER            3008
 //	EXAMPLE_RND       3000
-//	ROW               302E
-//	EXAMPLE           3017
+//	ROW               3017
 //	CHECK_INVIS       300C
 

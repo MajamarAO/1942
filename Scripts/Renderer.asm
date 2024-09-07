@@ -3,12 +3,7 @@
 ;tiene las coordenadas (x,y) siendo X el número de la fila e Y el número de la columna
 ;Para calcular el espacio en memoria que ocuparía se hace (xC000 + (X*x0080) + Y)
 
-;Funciones a hacer dentro de este archivo RENDER, PIXEL_INIT
-
-;Ideas, pasar un sprite en memoria y que sea impreso
-;deberia de funcionar para todo tamaño osea que se deberian de conocer 3 cosas: Posicion de inicio, 
-;ancho y alto del sprite.
-
+;Funciones a hacer dentro de este archivo RENDER,CHECK_POS 
 
 ;Intento de implementacion numero 1: El sprite estara cargado en memoria y tendra:
 ;1- direccion en memoria del pixel inicial
@@ -21,7 +16,8 @@
 ;R3 = Alto
 ;R4 = Pixel a escribir
 ;R5 = Dirección de pixel por escribir
-;
+;R6 = NOT usado durante la operacion
+;R7 = Columna
 
  
 RENDER
