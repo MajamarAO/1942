@@ -1,0 +1,16 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	RENDER            3009
+//	EXAMPLE_RND       3002
+//	SUM               301E
+//	PLANE             3025
+//	EX1               3024
+//	PLANE_PIXELS      3027
+//	CHECK_INVIS       300E
+//	ROW               3023
+//	PANTALLA          3022
+//	FIRST_PIXEL       3019
+//	END               3021
+

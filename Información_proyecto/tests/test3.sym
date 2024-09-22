@@ -1,0 +1,11 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	FIRST_PIXEL       3004
+//	PANTALLA          300B
+//	SUM               3007
+//	EX1               300D
+//	ROW               300C
+//	END               300A
+

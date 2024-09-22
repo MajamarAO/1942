@@ -11,31 +11,54 @@
 ;3- alto
 ;4- El resto del dibujo en .FILL
 ;R0 = Direccion de memoria del sprite estatica
-;R1 = Dirección de escritura 
-;R2 = Ancho
-;R3 = Alto
-;R4 = Pixel a escribir
-;R5 = Dirección de pixel por escribir
+;R1 = Ancho
+;R2 = Alto
+;R3 = Dirección de escritura 
+;R4 = Dirección de pixel por escribir
+;R5 = Pixel a escribir
 ;R6 = NOT usado durante la operacion
-;R7 = Columna
-
+;R7 = Columna
  
-RENDER
-ADD R5,R5, #1
-LDR R4,R5, #0
-BRn CHECK_INVIS
-STR R4,R1, #0
-CHECK_INVIS
-ADD R1,R1, #1
-ADD R2,R2, #-1
-BRp RENDER
-LDR R2, R0, #1 
-NOT R6, R2
-ADD R6, R6, #1
-ADD R1, R1, R6
-ADD R1, R1, R7
-ADD R3,R3, #-1 
-BRp RENDER
-HALT
+EXAMPLE_RND
+JSR FIRST_PIXEL
+LEA R0, PLANE
+LDR R1,R0, #0
+LDR R2,R0, #1
+LEA R4, PLANE_PIXELS
+ADD R4, R4, #-1
+BRnzp RENDER
 
+RENDER
+LD R6, ROW
+ADD R4,R4, #1
+LDR R5,R4, #0
+BRn CHECK_INVIS
+STR R5,R3, #0
+CHECK_INVIS
+ADD R3,R3, #1
+ADD R1,R1, #-1
+BRp RENDER
+ADD R3, R3, R6
+LDR R1, R0, #0
+NOT R6, R1
+ADD R6, R6, #1
+ADD R3, R3, R6
+ADD R2,R2, #-1 
+BRp RENDER
+
+
+PC      .FILL xC000
 ROW     .FILL x0080
+
+FIRST_PIXEL
+LD R3, PANTALLA
+LD R6, ROW
+ADD R3, R3, R1
+ADD R2, R2, #0
+BRz END_FSTPXL
+SUM_ALTO
+ADD R3, R3, R6
+ADD R2, R2, #-1
+BRp SUM_ALTO
+END_FSTPXL
+ret
