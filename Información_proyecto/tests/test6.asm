@@ -7,9 +7,11 @@ MAIN_LOOP
 JSR PLANE_UNRENDER
 JSR MOVEMENT
 JSR PLANE_RENDER
+JSR SHOOTING
 BRnzp MAIN_LOOP
 
 EX1             .FILL #50
+NEGATIVE_FLAG   .FILL x8000
 SAVE_R0         .BLKW  1
 SAVE_R1         .BLKW  1
 SAVE_R2         .BLKW  1
@@ -18,8 +20,9 @@ SAVE_R4         .BLKW  1
 SAVE_R5         .BLKW  1
 SAVE_R6         .BLKW  1
 SAVE_R7         .BLKW  1
-PLANE_X_POS           .BLKW  1
-PLANE_Y_POS           .BLKW  1
+SAVE_R7_PLUS    .BLKW  1
+PLANE_X_POS     .BLKW  1
+PLANE_Y_POS     .BLKW  1
 
 MOVEMENT
 ST R1, SAVE_R1
@@ -175,6 +178,80 @@ BRp SUM_ALTO
 END_FSTPXL
 ret
 
+SHOOTING
+ST R1, SAVE_R1
+ST R2, SAVE_R2
+ST R7, SAVE_R7_PLUS
+
+LD R6, SHOT1_FLAG
+BRn FST_SHOT
+BRzp SHOOT_SHOT1
+
+FST_SHOT
+
+LD R1, SHOT1_X_POS
+LD R2, SHOT1_Y_POS
+JSR SHOT_UNRENDERER
+
+LD R1, SHOT1_X_POS
+LD R2, SHOT1_Y_POS
+ADD R2, R2, #-1
+ST R2, SHOT1_Y_POS
+JSR SHOT_RENDERER
+BRnzp STOP_SHOOTING
+
+SHOOT_SHOT1
+
+LD R0, NEGATIVE_FLAG
+ST R0, SHOT1_FLAG
+
+ADD R2, R2, #-5
+ST R1, SHOT1_X_POS
+ST R2, SHOT1_Y_POS
+JSR SHOT_RENDERER
+BRnzp STOP_SHOOTING
+
+STOP_SHOOTING
+LD R1, SAVE_R1
+LD R2, SAVE_R2
+LD R7, SAVE_R7_PLUS
+ret
+
+
+SHOT_RENDERER
+
+ST R7, SAVE_R7
+
+JSR FIRST_PIXEL
+LEA R0, SHOTS
+LDR R1,R0, #0
+LDR R2,R0, #1
+LEA R4, SHOTS_PIXELS
+ADD R4, R4, #-1
+JSR RENDER
+
+LD R7, SAVE_R7
+ret
+
+SHOT_UNRENDERER
+
+ST R7, SAVE_R7
+
+JSR FIRST_PIXEL
+LEA R0, SHOTS
+LDR R1,R0, #0
+LDR R2,R0, #1
+JSR UNRENDER
+
+LD R7, SAVE_R7
+ret
+
+
+SHOT1_FLAG          .BLKW 1
+SHOT1_X_POS         .BLKW 1
+SHOT1_Y_POS         .BLKW 1
+SHOT_COUNTER        .BLKW 1
+
 PLANE  .FILL 11
        .FILl 8
 
@@ -274,4 +351,56 @@ PLANE_PIXELS
        .FILL xF000
        .FILL xF000
        .FILL xF000
+
+SHOTS           .FILL   11
+                .FILL   4
+
+SHOTS_PIXELS
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   xF000
+                
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   xF000
+
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   xF000
+                
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   x7C00
+                .FILL   xF000
+                .FILL   xF000
+                .FILL   xF000
 
