@@ -65,18 +65,28 @@ ADD R6, R6, R3
 BRz S_MOVE
 
 A_MOVE
+ADD R1, R1, 0
+BRz END_MOVE
 ADD R1, R1, #-1
 BRnzp END_MOVE
 
 W_MOVE
+ADD R2, R2, 0
+BRz END_MOVE
 ADD R2, R2, #-1
 BRnzp END_MOVE
 
 D_MOVE
+LD R5, X_MAX
+ADD R5, R5, R1
+BRz END_MOVE
 ADD R1, R1, #1
 BRnzp END_MOVE
 
 S_MOVE
+LD R5, Y_MAX
+ADD R5, R5, R2
+BRz END_MOVE
 ADD R2, R2, #1
 BRnzp END_MOVE
 
@@ -119,11 +129,14 @@ ret
 
 DETECTOR_INPUT      .FILL   xFE00
 KEYBOARD_INPUT      .FILL   xFE02
-ASCII_A .FILL #-97
-ASCII_W .FILL #-119 
-ASCII_D .FILL #-100
-ASCII_S .FILL #-115
-MASK    .FILL x00FF
+ASCII_A             .FILL #-97
+ASCII_W             .FILL #-119 
+ASCII_D             .FILL #-100
+ASCII_S             .FILL #-115
+MASK                .FILL x00FF
+X_MAX               .FILL #-117
+Y_MAX               .FILL #-116
+
 
 RENDER
 LD R6, ROW
