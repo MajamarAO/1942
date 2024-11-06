@@ -1,7 +1,7 @@
 Matias Alvarez:
-- Readme
-- Funciones: desrenderizado, implementación de enemigo, sistema de victoria/derrota y hitboxes 
-- Sprite de victoria  
+- Readme + (dibujos paint)
+- Funciones: desrenderizado, implementación de enemigo y tests de Enemigo, sistema de victoria/derrota y hitboxes 
+- Sprite de victoria "You win"
 Galo Berlini:
 - Estructura base del proyecto (archivos)
 - Script y guía de ejecución + comandos útiles + bibliografía útil  
