@@ -5,7 +5,8 @@
 ![1942 bombarder](https://github.com/user-attachments/assets/71bae849-a0b5-4481-a7dc-7896d3a2b0ef)
 
 ![1942 portaaviones](https://github.com/user-attachments/assets/f074f188-1e64-4af3-bc86-3da016e327e7)
-
+#### Jugabilidad: 
+teclas 'A'(derecha), 'W'(arriba), 'S'(abajo), 'D'(izquierda).
 #### Enemigos: Existen varios tipos de enemigos los cuales varían de vida (cantidad de disparos necesarios para derribarlos), movimiento(velocidad y patrón), tamaño y la manera en la que disparan.
 * ##### Cazas Básicos: Pequeños aviones de combate que aparecen en formación y realizan ataques simples. Se derriban con un disparo.
 * ##### Bombarderos Medios: Aviones más grandes que lanzan bombas o disparan ráfagas más largas. Se derriban con un disparo.
