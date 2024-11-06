@@ -1,4 +1,4 @@
 reset
-as test6.asm
+as testCompleto1.asm
 load lc3os.obj
-load test6.obj
+load testCompleto1.obj
